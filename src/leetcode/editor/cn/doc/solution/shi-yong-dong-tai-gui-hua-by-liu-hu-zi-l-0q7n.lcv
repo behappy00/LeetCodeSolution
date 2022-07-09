@@ -1,0 +1,46 @@
+### 解题思路
+
+使用动态规划注意初始值的设置，然后一定要注意边界问题，指针问题。很容易搞错，比较吃经验。
+
+### 代码
+
+* java
+
+```java
+class Solution {
+    public boolean isMatch(String s, String p) {
+        int m = s.length(), n = p.length();
+        boolean[][] dp = new boolean[m+1][n+1];
+        dp[0][0] = true;
+        for(int i = 0; i < m+1; i++){
+            for(int j = 1; j < n+1; j++){
+                if(p.charAt(j-1) == '*'){
+                    dp[i][j] = dp[i][j-2];
+                    if(match(s,p,i-1,j-2)){
+                        dp[i][j] = dp[i][j] || dp[i-1][j];
+                    }
+                }else{
+                    if(match(s,p,i-1,j-1)){
+                        dp[i][j] = dp[i-1][j-1];
+                    }
+                }
+            
+            }
+        }
+        return dp[m][n];
+        
+    }
+    boolean match(String s, String p, int i, int j){
+        if(i < 0){
+            return false;
+        }else if(p.charAt(j) == '.'){
+            return true;
+        }else if(s.charAt(i) == p.charAt(j)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+```
+
