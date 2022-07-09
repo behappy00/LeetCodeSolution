@@ -40,6 +40,11 @@
 
 package leetcode.editor.cn;
 
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
 /**
  * Valid Parentheses
  *
@@ -53,12 +58,63 @@ public class P20_ValidParentheses {
     }
 
     //力扣代码
-//leetcode submit region begin(Prohibit modification and deletion)
+    //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isValid(String s) {
+            int n = s.length();
+            if (n % 2 == 1) {
+                return false;
+            }
 
+            Map<Character, Character> pairs = new HashMap<Character, Character>() {{
+                put(')', '(');
+                put(']', '[');
+                put('}', '{');
+            }};
+            Deque<Character> stack = new LinkedList<Character>();
+            for (int i = 0; i < n; i++) {
+                char ch = s.charAt(i);
+                if (pairs.containsKey(ch)) {
+                    if (stack.isEmpty() || stack.peek() != pairs.get(ch)) {
+                        return false;
+                    }
+                    stack.pop();
+                } else {
+                    stack.push(ch);
+                }
+            }
+            return stack.isEmpty();
         }
     }
+
+//    方法一：
+//    class Solution {
+//        public boolean isValid(String s) {
+//            Stack<Character> stk = new Stack<Character>();
+//            int n = s.length();
+//            if (n % 2 == 1) {
+//                return false;
+//            }else{
+//                for (int i = 0; i < n; i++) {
+//                    if (stk.empty() || s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
+//                        stk.push(s.charAt(i));
+//                    } else if (stk.peek() == '(' && s.charAt(i) == ')') {
+//                        stk.pop();
+//                    } else if (stk.peek() == '[' && s.charAt(i) == ']') {
+//                        stk.pop();
+//                    } else if (stk.peek() == '{' && s.charAt(i) == '}') {
+//                        stk.pop();
+//                    } else {
+//                        return false;
+//                    }
+//                }
+//            }
+//
+//            return stk.empty();
+//        }
+//
+//
+//    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

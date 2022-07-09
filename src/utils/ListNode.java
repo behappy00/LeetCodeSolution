@@ -27,6 +27,11 @@ public class ListNode {
         }
     }
 
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
     //以当前节点为头节点的链表信息字符串 方便查看
     @Override
     public String toString() {
