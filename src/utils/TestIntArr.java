@@ -3,9 +3,7 @@ package utils;
 import java.util.Scanner;
 
 /**
- * @author JonnyOu
- * @date 2022/2/28 17:21
- * @email JonnyOu1012@gmail.com
+ * @author WBJ
  */
 public class TestIntArr {
 

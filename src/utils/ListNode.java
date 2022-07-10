@@ -1,9 +1,7 @@
 package utils;
 
 /**
- * @author JonnyOu
- * @date 2022/2/24 16:10
- * @email JonnyOu1012@gmail.com
+ * @author WBJ
  */
 public class ListNode {
     public int val;
