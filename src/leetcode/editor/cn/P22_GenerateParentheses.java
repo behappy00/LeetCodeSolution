@@ -25,6 +25,7 @@ import java.util.List;
 
 /**
  * Generate Parentheses
+ *
  * @author WBJ
  * @date 2022-07-09 23:57:50
  */

@@ -59,21 +59,22 @@ package leetcode.editor.cn;
 
 /**
  * Integer to Roman
+ *
  * @author WBJ
  * @date 2022-07-09 23:27:06
  */
-public class P12_IntegerToRoman{
-	 public static void main(String[] args) {
-	 	 //测试代码
-	 	 Solution solution = new P12_IntegerToRoman().new Solution();
-	 }
-	 
-//力扣代码
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+public class P12_IntegerToRoman {
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P12_IntegerToRoman().new Solution();
+    }
 
-	int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-	String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+    //力扣代码
+//leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+
+        int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
 //        Symbol Value
 //        I 1
@@ -85,22 +86,22 @@ class Solution {
 //        M 1000
 
 
-	public String intToRoman(int num) {
-		StringBuffer roman = new StringBuffer();
-		for (int i = 0; i < values.length; ++i) {
-			int value = values[i];
-			String symbol = symbols[i];
-			while (num >= value) {
-				num -= value;
-				roman.append(symbol);
-			}
-			if (num == 0) {
-				break;
-			}
-		}
-		return roman.toString();
-	}
-}
+        public String intToRoman(int num) {
+            StringBuffer roman = new StringBuffer();
+            for (int i = 0; i < values.length; ++i) {
+                int value = values[i];
+                String symbol = symbols[i];
+                while (num >= value) {
+                    num -= value;
+                    roman.append(symbol);
+                }
+                if (num == 0) {
+                    break;
+                }
+            }
+            return roman.toString();
+        }
+    }
 
 //leetcode submit region end(Prohibit modification and deletion)
 
