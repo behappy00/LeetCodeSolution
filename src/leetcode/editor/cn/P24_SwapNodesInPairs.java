@@ -35,6 +35,8 @@
 
 package leetcode.editor.cn;
 
+import utils.ListNode;
+
 /**
  * Swap Nodes in Pairs
  * @author WBJ
@@ -61,9 +63,16 @@ public class P24_SwapNodesInPairs {
      */
     class Solution {
         public ListNode swapPairs(ListNode head) {
-
+            if (head == null || head.next == null) {
+                return head;
+            }
+            ListNode newHead = head.next;
+            head.next = swapPairs(newHead.next);
+            newHead.next = head;
+            return newHead;
         }
     }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
