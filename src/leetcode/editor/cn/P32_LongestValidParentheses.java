@@ -37,6 +37,9 @@
 
 package leetcode.editor.cn;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * Longest Valid Parentheses
  * @author WBJ
@@ -51,10 +54,26 @@ public class P32_LongestValidParentheses{
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int longestValidParentheses(String s) {
-
-    }
+	public int longestValidParentheses(String s) {
+		int maxans = 0;
+		Deque<Integer> stack = new LinkedList<Integer>();
+		stack.push(-1);
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == '(') {
+				stack.push(i);
+			} else {
+				stack.pop();
+				if (stack.isEmpty()) {
+					stack.push(i);
+				} else {
+					maxans = Math.max(maxans, i - stack.peek());
+				}
+			}
+		}
+		return maxans;
+	}
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

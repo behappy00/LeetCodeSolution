@@ -65,10 +65,29 @@ public class P31_NextPermutation{
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public void nextPermutation(int[] nums) {
-
-    }
+	public void nextPermutation(int[] nums) {
+		int pre = nums.length - 2;
+		while (pre >= 0 && nums[pre] >= nums[pre + 1]) pre--;
+		if (pre == -1) reverse(nums, 0, nums.length - 1); // 边界值处理
+		else {
+			int post = pre + 1;
+			while (post < nums.length && nums[post] > nums[pre]) post++;
+			post--;
+			int t = nums[pre];
+			nums[pre] = nums[post];
+			nums[post] = t;
+			reverse(nums, pre + 1, nums.length - 1);
+		}
+	}
+	void reverse(int[] nums, int l, int r) {
+		while (l < r) {
+			int t = nums[l];
+			nums[l++] = nums[r];
+			nums[r--] = t;
+		}
+	}
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
