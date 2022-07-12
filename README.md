@@ -4,7 +4,12 @@
 
 #### 补充二：snow
 
-#### 补充三：时间表
+#### 补充三：不理解
+
+P36
+P37
+
+#### 补充四：时间表
 |	时间	|	题目	|	当日题数	|	总题数	|	总天数	|	间隔时间	|
 |	:---	|	---	|	---:	|	---:	|	---:	|	---:	|
 |	2022/6/20	|	[P1_TwoSum](https://github.com/behappy00/LeetCodeSolution/tree/master/src/leetcode/editor/cn/P1_TwoSum.java) <br> [P9_PalindromeNumber](https://github.com/behappy00/LeetCodeSolution/tree/master/src/leetcode/editor/cn/P9_PalindromeNumber.java)	|	2	|	2	|	1	|	0	|
