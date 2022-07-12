@@ -51,7 +51,7 @@ public class P28_ImplementStrstr {
     //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 
-//    KMP算法
+    //    KMP算法
     class Solution {
         public int strStr(String haystack, String needle) {
             int n = haystack.length(), m = needle.length();

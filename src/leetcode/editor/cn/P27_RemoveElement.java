@@ -63,6 +63,7 @@ package leetcode.editor.cn;
 
 /**
  * Remove Element
+ *
  * @author WBJ
  * @date 2022-07-09 23:57:55
  */
@@ -76,11 +77,11 @@ public class P27_RemoveElement {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int removeElement(int[] nums, int val) {
-            int n = nums.length ;
+            int n = nums.length;
             int j = 0;
-            for(int i =0; i<n;i++){
-                if(nums[i] != val){
-                    nums[j] =nums[i];
+            for (int i = 0; i < n; i++) {
+                if (nums[i] != val) {
+                    nums[j] = nums[i];
                     j++;
                 }
             }

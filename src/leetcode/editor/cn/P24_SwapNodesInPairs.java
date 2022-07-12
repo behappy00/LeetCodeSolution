@@ -39,6 +39,7 @@ import utils.ListNode;
 
 /**
  * Swap Nodes in Pairs
+ *
  * @author WBJ
  * @date 2022-07-09 23:57:52
  */
@@ -54,11 +55,11 @@ public class P24_SwapNodesInPairs {
     /**
      * Definition for singly-linked list.
      * public class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode() {}
-     *     ListNode(int val) { this.val = val; }
-     *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * int val;
+     * ListNode next;
+     * ListNode() {}
+     * ListNode(int val) { this.val = val; }
+     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
      * }
      */
     class Solution {

@@ -32,6 +32,7 @@ package leetcode.editor.cn;
 
 /**
  * Find First and Last Position of Element in Sorted Array
+ *
  * @author WBJ
  * @date 2022-07-11 19:52:23
  */

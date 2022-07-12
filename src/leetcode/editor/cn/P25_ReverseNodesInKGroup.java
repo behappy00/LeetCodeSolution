@@ -40,6 +40,7 @@ import utils.ListNode;
 
 /**
  * Reverse Nodes in k-Group
+ *
  * @author WBJ
  * @date 2022-07-09 23:57:53
  */
@@ -55,11 +56,11 @@ public class P25_ReverseNodesInKGroup {
     /**
      * Definition for singly-linked list.
      * public class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode() {}
-     *     ListNode(int val) { this.val = val; }
-     *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * int val;
+     * ListNode next;
+     * ListNode() {}
+     * ListNode(int val) { this.val = val; }
+     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
      * }
      */
     class Solution {
