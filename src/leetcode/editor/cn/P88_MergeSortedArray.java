@@ -1,4 +1,4 @@
-/**
+/*
 <p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
 
 <p><strong>Merge</strong> <code>nums1</code> and <code>nums2</code> into a single array sorted in <strong>non-decreasing order</strong>.</p>
@@ -54,22 +54,34 @@ package leetcode.editor.cn;
 
 /**
  * Merge Sorted Array
+ *
  * @author WBJ
  * @date 2022-07-17 15:04:44
  */
-public class P88_MergeSortedArray{
-	 public static void main(String[] args) {
-	 	 //测试代码
-	 	 Solution solution = new P88_MergeSortedArray().new Solution();
-	 }
-	 
-//力扣代码
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-
+public class P88_MergeSortedArray {
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P88_MergeSortedArray().new Solution();
     }
-}
+
+    //力扣代码
+//leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public void merge(int[] nums1, int m, int[] nums2, int n) {
+            int i = nums1.length;
+
+            while (n > 0) {
+                if (m > 0 && nums1[m - 1] > nums2[n - 1]) {
+                    nums1[--i] = nums1[--m];
+                    //替代swap，参考官方题解“逆向双指针解法”的公式
+                } else {
+                    nums1[--i] = nums2[--n];
+                    //替代swap，参考官方题解“逆向双指针解法”的公式
+                }
+
+            }
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

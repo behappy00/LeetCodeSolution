@@ -1,4 +1,4 @@
-/**
+/*
 <p>Given the <code>head</code> of a sorted linked list, <em>delete all duplicates such that each element appears only once</em>. Return <em>the linked list <strong>sorted</strong> as well</em>.</p>
 
 <p>&nbsp;</p>
@@ -33,32 +33,47 @@ import utils.ListNode;
 
 /**
  * Remove Duplicates from Sorted List
+ *
  * @author WBJ
  * @date 2022-07-17 15:04:42
  */
-public class P83_RemoveDuplicatesFromSortedList{
-	 public static void main(String[] args) {
-	 	 //测试代码
-	 	 Solution solution = new P83_RemoveDuplicatesFromSortedList().new Solution();
-	 }
-	 
+public class P83_RemoveDuplicatesFromSortedList {
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P83_RemoveDuplicatesFromSortedList().new Solution();
+    }
+
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public ListNode deleteDuplicates(ListNode head) {
 
-	}
-}
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode() {}
+     * ListNode(int val) { this.val = val; }
+     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+    class Solution {
+        public ListNode deleteDuplicates(ListNode head) {
+            if (head == null) {
+                return head;
+            }
+
+            ListNode cur = head;
+            while (cur.next != null) {
+                if (cur.val == cur.next.val) {
+                    cur.next = cur.next.next;
+                } else {
+                    cur = cur.next;
+                }
+            }
+
+            return head;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
