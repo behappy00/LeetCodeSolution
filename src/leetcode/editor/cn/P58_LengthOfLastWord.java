@@ -43,6 +43,7 @@ package leetcode.editor.cn;
 
 /**
  * Length of Last Word
+ *
  * @author WBJ
  * @date 2022-07-16 22:33:35
  */
@@ -56,16 +57,16 @@ public class P58_LengthOfLastWord {
 //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int lengthOfLastWord(String s) {
-			int index = s.length() - 1;
-			while (s.charAt(index) == ' ') {
-				index--;
-			}
-			int wordLength = 0;
-			while (index >= 0 && s.charAt(index) != ' ') {
-				wordLength++;
-				index--;
-			}
-			return wordLength;
+            int index = s.length() - 1;
+            while (s.charAt(index) == ' ') {
+                index--;
+            }
+            int wordLength = 0;
+            while (index >= 0 && s.charAt(index) != ' ') {
+                wordLength++;
+                index--;
+            }
+            return wordLength;
 
 //            System.out.println(s.trim());
 //            int n = s.trim().length();

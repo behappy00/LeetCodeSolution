@@ -37,7 +37,8 @@
 
 package leetcode.editor.cn;
 
-import javax.swing.tree.TreeNode;
+
+import utils.TreeNode;
 
 /**
  * Same Tree
@@ -69,14 +70,21 @@ public class P100_SameTree {
      * }
      * }
      */
+
     class Solution {
         public boolean isSameTree(TreeNode p, TreeNode q) {
-            if (p == null && q == null) return true;
-            if (p == null || q == null) return false;
-
-            return (p.val == q.val) && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+            if (p == null && q == null) {
+                return true;
+            } else if (p == null || q == null) {
+                return false;
+            } else if (p.val != q.val) {
+                return false;
+            } else {
+                return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+            }
         }
     }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

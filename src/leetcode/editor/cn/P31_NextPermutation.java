@@ -53,6 +53,7 @@ package leetcode.editor.cn;
 
 /**
  * Next Permutation
+ *
  * @author WBJ
  * @date 2022-07-11 19:52:20
  */

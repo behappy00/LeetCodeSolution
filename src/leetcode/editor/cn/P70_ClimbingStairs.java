@@ -43,27 +43,27 @@ package leetcode.editor.cn;
  * @date 2022-07-17 15:04:40
  */
 public class P70_ClimbingStairs {
-	public static void main(String[] args) {
-		//测试代码
-		Solution solution = new P70_ClimbingStairs().new Solution();
-	}
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P70_ClimbingStairs().new Solution();
+    }
 
-	//力扣代码
+    //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public int climbStairs(int n) {
-			// 动态规划
+    class Solution {
+        public int climbStairs(int n) {
+            // 动态规划
 
-			int p = 0, q = 0, r = 1;
+            int p = 0, q = 0, r = 1;
 
-			for (int i = 1; i <= n; i++) {
-				p = q;
-				q = r;
-				r = q + p;
-			}
-			return r;
-		}
-	}
+            for (int i = 1; i <= n; i++) {
+                p = q;
+                q = r;
+                r = q + p;
+            }
+            return r;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

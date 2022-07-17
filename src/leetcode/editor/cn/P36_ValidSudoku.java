@@ -63,6 +63,7 @@ package leetcode.editor.cn;
 
 /**
  * Valid Sudoku
+ *
  * @author WBJ
  * @date 2022-07-12 21:07:22
  */

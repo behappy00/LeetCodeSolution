@@ -41,6 +41,7 @@ package leetcode.editor.cn;
 
 /**
  * Search Insert Position
+ *
  * @author WBJ
  * @date 2022-07-11 19:52:24
  */

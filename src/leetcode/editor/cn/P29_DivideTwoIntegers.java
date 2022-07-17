@@ -38,6 +38,7 @@ package leetcode.editor.cn;
 
 /**
  * Divide Two Integers
+ *
  * @author WBJ
  * @date 2022-07-10 20:57:03
  */
