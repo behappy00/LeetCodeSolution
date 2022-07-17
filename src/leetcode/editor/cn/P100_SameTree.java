@@ -69,7 +69,7 @@ public class P100_SameTree{
  */
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-
+return false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

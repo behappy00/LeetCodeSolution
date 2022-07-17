@@ -29,6 +29,8 @@
 
 package leetcode.editor.cn;
 
+import utils.ListNode;
+
 /**
  * Remove Duplicates from Sorted List
  * @author WBJ
@@ -54,7 +56,7 @@ public class P83_RemoveDuplicatesFromSortedList{
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-
+return head;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
