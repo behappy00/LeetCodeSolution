@@ -1,4 +1,4 @@
-/**
+/*
 <p>Given a non-negative integer <code>x</code>,&nbsp;compute and return <em>the square root of</em> <code>x</code>.</p>
 
 <p>Since the return type&nbsp;is an integer, the decimal digits are <strong>truncated</strong>, and only <strong>the integer part</strong> of the result&nbsp;is returned.</p>
@@ -46,7 +46,7 @@ public class P69_Sqrtx{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int mySqrt(int x) {
-return 0;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
