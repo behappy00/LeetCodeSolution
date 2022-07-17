@@ -33,22 +33,28 @@ package leetcode.editor.cn;
 
 /**
  * Sqrt(x)
+ *
  * @author WBJ
  * @date 2022-07-17 15:04:36
  */
-public class P69_Sqrtx{
-	 public static void main(String[] args) {
-	 	 //测试代码
-	 	 Solution solution = new P69_Sqrtx().new Solution();
-	 }
-	 
-//力扣代码
+public class P69_Sqrtx {
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P69_Sqrtx().new Solution();
+    }
+
+    //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int mySqrt(int x) {
+    class Solution {
+        public int mySqrt(int x) {
+            if (x == 0) {
+                return 0;
+            }
+            int ans = (int) Math.exp(0.5 * Math.log(x));
+            return (long) (ans + 1) * (ans + 1) <= x ? ans + 1 : ans;
+        }
 
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
