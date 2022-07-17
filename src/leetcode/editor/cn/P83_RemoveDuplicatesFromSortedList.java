@@ -56,8 +56,8 @@ public class P83_RemoveDuplicatesFromSortedList{
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-return head;
-    }
+
+	}
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

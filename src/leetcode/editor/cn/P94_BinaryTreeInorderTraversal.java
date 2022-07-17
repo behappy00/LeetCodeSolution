@@ -72,8 +72,7 @@ public class P94_BinaryTreeInorderTraversal {
      */
     class Solution {
         public List<Integer> inorderTraversal(TreeNode root) {
-			List<Integer> res= new ArrayList<>();
-            return res;
+
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
