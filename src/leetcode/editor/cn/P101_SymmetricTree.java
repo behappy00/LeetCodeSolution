@@ -34,38 +34,50 @@ import utils.TreeNode;
 
 /**
  * Symmetric Tree
+ *
  * @author WBJ
  * @date 2022-07-17 21:09:01
  */
 public class P101_SymmetricTree {
-	public static void main(String[] args) {
-		//测试代码
-		Solution solution = new P101_SymmetricTree().new Solution();
-	}
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P101_SymmetricTree().new Solution();
+    }
 
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 
-	/**
-	 * Definition for a binary tree node.
-	 * public class TreeNode {
-	 *     int val;
-	 *     TreeNode left;
-	 *     TreeNode right;
-	 *     TreeNode() {}
-	 *     TreeNode(int val) { this.val = val; }
-	 *     TreeNode(int val, TreeNode left, TreeNode right) {
-	 *         this.val = val;
-	 *         this.left = left;
-	 *         this.right = right;
-	 *     }
-	 * }
-	 */
-	class Solution {
-		public boolean isSymmetric(TreeNode root) {
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
+    class Solution {
+        public boolean isSymmetric(TreeNode root) {
+            return check(root, root);
+        }
 
-		}
-	}
+        private boolean check(TreeNode p, TreeNode q) {
+            if (p == null && q == null) {
+                return true;
+            }
+            if (p == null || q == null) {
+                return false;
+            }
+
+            return p.val == q.val && check(p.left, q.right) && check(p.right, q.left);
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
