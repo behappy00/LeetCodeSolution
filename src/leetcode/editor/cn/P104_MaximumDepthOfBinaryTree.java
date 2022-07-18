@@ -30,8 +30,11 @@
 
 package leetcode.editor.cn;
 
+import utils.TreeNode;
+
 /**
  * Maximum Depth of Binary Tree
+ *
  * @author WBJ
  * @date 2022-07-17 21:09:03
  */
@@ -47,20 +50,27 @@ public class P104_MaximumDepthOfBinaryTree {
 	/**
 	 * Definition for a binary tree node.
 	 * public class TreeNode {
-	 *     int val;
-	 *     TreeNode left;
-	 *     TreeNode right;
-	 *     TreeNode() {}
-	 *     TreeNode(int val) { this.val = val; }
-	 *     TreeNode(int val, TreeNode left, TreeNode right) {
-	 *         this.val = val;
-	 *         this.left = left;
-	 *         this.right = right;
-	 *     }
+	 * int val;
+	 * TreeNode left;
+	 * TreeNode right;
+	 * TreeNode() {}
+	 * TreeNode(int val) { this.val = val; }
+	 * TreeNode(int val, TreeNode left, TreeNode right) {
+	 * this.val = val;
+	 * this.left = left;
+	 * this.right = right;
+	 * }
 	 * }
 	 */
 	class Solution {
 		public int maxDepth(TreeNode root) {
+			if (root == null) {
+				return 0;
+			} else {
+				int leftHeight = maxDepth(root.left);
+				int rightHeight = maxDepth(root.right);
+				return Math.max(leftHeight, rightHeight) + 1;
+			}
 
 		}
 	}
