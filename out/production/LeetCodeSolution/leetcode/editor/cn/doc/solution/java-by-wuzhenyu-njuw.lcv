@@ -1,0 +1,36 @@
+### 解题思路
+
+1. 找到第一个比后面小的元素
+2. 与后面比它大的最小值交换
+3. 交换后使他后面的数字升序排列, reverse即可, 因为 1. 的特性,后面是降序排列的
+
+### 代码
+
+* java
+
+```java
+class Solution {
+    public void nextPermutation(int[] nums) {
+        int pre = nums.length - 2;
+        while (pre >= 0 && nums[pre] >= nums[pre + 1]) pre--;
+        if (pre == -1) reverse(nums, 0, nums.length - 1); // 边界值处理
+        else {
+            int post = pre + 1;
+            while (post < nums.length && nums[post] > nums[pre]) post++;
+            post--;
+            int t = nums[pre];
+            nums[pre] = nums[post];
+            nums[post] = t;
+            reverse(nums, pre + 1, nums.length - 1);
+        }
+    }
+    void reverse(int[] nums, int l, int r) {
+        while (l < r) {
+            int t = nums[l];
+            nums[l++] = nums[r];
+            nums[r--] = t; 
+        }
+    }
+}
+```
+
