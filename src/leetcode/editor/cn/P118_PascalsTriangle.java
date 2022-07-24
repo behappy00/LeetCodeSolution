@@ -22,26 +22,41 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Pascal's Triangle
+ *
  * @author WBJ
  * @date 2022-07-17 21:09:15
  */
 public class P118_PascalsTriangle {
-	public static void main(String[] args) {
-		//测试代码
-		Solution solution = new P118_PascalsTriangle().new Solution();
-	}
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P118_PascalsTriangle().new Solution();
+    }
 
-	//力扣代码
+    //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public List<List<Integer>> generate(int numRows) {
+    class Solution {
+        public List<List<Integer>> generate(int numRows) {
+            List<List<Integer>> ret = new ArrayList<List<Integer>>();
+            for (int i = 0; i < numRows; ++i) {
+                List<Integer> row = new ArrayList<Integer>();
+                for (int j = 0; j <= i; ++j) {
+                    if (j == 0 || j == i) {
+                        row.add(1);
+                    } else {
+                        row.add(ret.get(i - 1).get(j - 1) + ret.get(i - 1).get(j));
+                    }
+                }
+                ret.add(row);
+            }
+            return ret;
+        }
+    }
 
-		}
-	}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

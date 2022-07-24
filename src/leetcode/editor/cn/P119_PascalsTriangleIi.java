@@ -28,26 +28,41 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Pascal's Triangle II
+ *
  * @author WBJ
  * @date 2022-07-17 21:09:17
  */
 public class P119_PascalsTriangleIi {
-	public static void main(String[] args) {
-		//测试代码
-		Solution solution = new P119_PascalsTriangleIi().new Solution();
-	}
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P119_PascalsTriangleIi().new Solution();
+    }
 
-	//力扣代码
+    //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public List<Integer> getRow(int rowIndex) {
+    class Solution {
+        public List<Integer> getRow(int rowIndex) {
+            List<List<Integer>> ans = new ArrayList<List<Integer>>();
+            for (int i = 0; i <= rowIndex; ++i) {
+                List<Integer> row = new ArrayList<Integer>();
+                for (int j = 0; j <= i; ++j) {
+                    if (j == 0 || j == i) {
+                        row.add(1);
+                    } else {
+                        row.add(ans.get(i - 1).get(j - 1) + ans.get(i - 1).get(j));
+                    }
+                }
+                ans.add(row);
+            }
+            return ans.get(rowIndex);
+        }
 
-		}
-	}
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
