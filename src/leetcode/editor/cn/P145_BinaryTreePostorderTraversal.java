@@ -37,8 +37,10 @@
 
 package leetcode.editor.cn;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import utils.TreeNode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -73,7 +75,18 @@ public class P145_BinaryTreePostorderTraversal {
 	 */
 	class Solution {
 		public List<Integer> postorderTraversal(TreeNode root) {
+			List<Integer> res = new ArrayList<Integer>();
+			postorder(root, res);
+			return res;
+		}
 
+		public void postorder(TreeNode root, List<Integer> res) {
+			if (root == null) {
+				return;
+			}
+			postorder(root.left, res);
+			postorder(root.right, res);
+			res.add(root.val);
 		}
 	}
 //leetcode submit region end(Prohibit modification and deletion)
