@@ -46,8 +46,11 @@
 
 package leetcode.editor.cn;
 
+import utils.ListNode;
+
 /**
  * Linked List Cycle
+ *
  * @author WBJ
  * @date 2022-07-24 21:19:27
  */

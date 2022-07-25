@@ -35,8 +35,12 @@
 
 package leetcode.editor.cn;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * Best Time to Buy and Sell Stock
+ *
  * @author WBJ
  * @date 2022-07-24 21:19:21
  */
@@ -50,7 +54,25 @@ public class P121_BestTimeToBuyAndSellStock {
 //leetcode submit region begin(Prohibit modification and deletion)
 	class Solution {
 		public int maxProfit(int[] prices) {
-
+			int len = prices.length;
+			if (len < 2) {
+				return 0;
+			}
+			Deque<Integer> deque = new LinkedList<>();
+			int base = 0;
+			int res = 0;
+			for (int i = 0; i <= len; i++) {
+				int curValue = i == len ? 0 : prices[i];
+				while (!deque.isEmpty() && deque.peekLast() > curValue) {
+					int top = deque.pollLast();
+					res = Math.max(res, top - base);
+				}
+				if (deque.isEmpty()) {
+					base = curValue;
+				}
+				deque.offerLast(curValue);
+			}
+			return res;
 		}
 	}
 //leetcode submit region end(Prohibit modification and deletion)
