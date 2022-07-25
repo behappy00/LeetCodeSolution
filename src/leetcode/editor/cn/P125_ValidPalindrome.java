@@ -43,22 +43,35 @@ package leetcode.editor.cn;
 
 /**
  * Valid Palindrome
+ *
  * @author WBJ
  * @date 2022-07-24 21:19:23
  */
 public class P125_ValidPalindrome {
-	public static void main(String[] args) {
-		//测试代码
-		Solution solution = new P125_ValidPalindrome().new Solution();
-	}
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P125_ValidPalindrome().new Solution();
+    }
 
-	//力扣代码
+    //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
-		public boolean isPalindrome(String s) {
+    class Solution {
+        public boolean isPalindrome(String s) {
 
-		}
-	}
+            StringBuffer sgood = new StringBuffer();
+            int length = s.length();
+            for (int i = 0; i < length; i++) {
+                char ch = s.charAt(i);
+                if (Character.isLetterOrDigit(ch)) {
+                    sgood.append(Character.toLowerCase(ch));
+                }
+            }
+            StringBuffer sgood_rev = new StringBuffer(sgood).reverse();
+            return sgood.toString().equals(sgood_rev.toString());
+        }
+    }
+
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -39,41 +39,41 @@ import utils.TreeNode;
  * @date 2022-07-17 21:09:03
  */
 public class P104_MaximumDepthOfBinaryTree {
-	public static void main(String[] args) {
-		//测试代码
-		Solution solution = new P104_MaximumDepthOfBinaryTree().new Solution();
-	}
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P104_MaximumDepthOfBinaryTree().new Solution();
+    }
 
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 
-	/**
-	 * Definition for a binary tree node.
-	 * public class TreeNode {
-	 * int val;
-	 * TreeNode left;
-	 * TreeNode right;
-	 * TreeNode() {}
-	 * TreeNode(int val) { this.val = val; }
-	 * TreeNode(int val, TreeNode left, TreeNode right) {
-	 * this.val = val;
-	 * this.left = left;
-	 * this.right = right;
-	 * }
-	 * }
-	 */
-	class Solution {
-		public int maxDepth(TreeNode root) {
-			if (root == null) {
-				return 0;
-			} else {
-				int leftHeight = maxDepth(root.left);
-				int rightHeight = maxDepth(root.right);
-				return Math.max(leftHeight, rightHeight) + 1;
-			}
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
+    class Solution {
+        public int maxDepth(TreeNode root) {
+            if (root == null) {
+                return 0;
+            } else {
+                int leftHeight = maxDepth(root.left);
+                int rightHeight = maxDepth(root.right);
+                return Math.max(leftHeight, rightHeight) + 1;
+            }
 
-		}
-	}
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

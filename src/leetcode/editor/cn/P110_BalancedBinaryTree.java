@@ -50,45 +50,45 @@ import utils.TreeNode;
  * @date 2022-07-17 21:09:07
  */
 public class P110_BalancedBinaryTree {
-	public static void main(String[] args) {
-		//测试代码
-		Solution solution = new P110_BalancedBinaryTree().new Solution();
-	}
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P110_BalancedBinaryTree().new Solution();
+    }
 
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 
-	/**
-	 * Definition for a binary tree node.
-	 * public class TreeNode {
-	 *     int val;
-	 *     TreeNode left;
-	 *     TreeNode right;
-	 *     TreeNode() {}
-	 *     TreeNode(int val) { this.val = val; }
-	 *     TreeNode(int val, TreeNode left, TreeNode right) {
-	 *         this.val = val;
-	 *         this.left = left;
-	 *         this.right = right;
-	 *     }
-	 * }
-	 */
-	class Solution {
-		public boolean isBalanced(TreeNode root) {
-			return height(root) >= 0;
-		}
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
+    class Solution {
+        public boolean isBalanced(TreeNode root) {
+            return height(root) >= 0;
+        }
 
-		private int height(TreeNode root) {
-			if (root == null)
-				return 0;
-			int lh = height(root.left), rh = height(root.right);
-			if (lh >= 0 && rh >= 0 && Math.abs(lh - rh) <= 1) {
-				return Math.max(lh, rh) + 1;
-			} else {
-				return -1;
-			}
-		}
-	}
+        private int height(TreeNode root) {
+            if (root == null)
+                return 0;
+            int lh = height(root.left), rh = height(root.right);
+            if (lh >= 0 && rh >= 0 && Math.abs(lh - rh) <= 1) {
+                return Math.max(lh, rh) + 1;
+            } else {
+                return -1;
+            }
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

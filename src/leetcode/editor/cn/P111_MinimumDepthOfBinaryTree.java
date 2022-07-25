@@ -44,66 +44,66 @@ import java.util.Queue;
  * @date 2022-07-17 21:09:06
  */
 public class P111_MinimumDepthOfBinaryTree {
-	public static void main(String[] args) {
-		//测试代码
-		Solution solution = new P111_MinimumDepthOfBinaryTree().new Solution();
-	}
+    public static void main(String[] args) {
+        //测试代码
+        Solution solution = new P111_MinimumDepthOfBinaryTree().new Solution();
+    }
 
 //力扣代码
 //leetcode submit region begin(Prohibit modification and deletion)
 
-	/**
-	 * Definition for a binary tree node.
-	 * public class TreeNode {
-	 *     int val;
-	 *     TreeNode left;
-	 *     TreeNode right;
-	 *     TreeNode() {}
-	 *     TreeNode(int val) { this.val = val; }
-	 *     TreeNode(int val, TreeNode left, TreeNode right) {
-	 *         this.val = val;
-	 *         this.left = left;
-	 *         this.right = right;
-	 *     }
-	 * }
-	 */
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
 //	广度优先
-	class Solution {
-		class QueueNode {
-			TreeNode node;
-			int depth;
+    class Solution {
+        public int minDepth(TreeNode root) {
+            if (root == null) {
+                return 0;
+            }
 
-			public QueueNode(TreeNode node, int depth) {
-				this.node = node;
-				this.depth = depth;
-			}
-		}
+            Queue<QueueNode> queue = new LinkedList<QueueNode>();
+            queue.offer(new QueueNode(root, 1));
+            while (!queue.isEmpty()) {
+                QueueNode nodeDepth = queue.poll();
+                TreeNode node = nodeDepth.node;
+                int depth = nodeDepth.depth;
+                if (node.left == null && node.right == null) {
+                    return depth;
+                }
+                if (node.left != null) {
+                    queue.offer(new QueueNode(node.left, depth + 1));
+                }
+                if (node.right != null) {
+                    queue.offer(new QueueNode(node.right, depth + 1));
+                }
+            }
 
-		public int minDepth(TreeNode root) {
-			if (root == null) {
-				return 0;
-			}
+            return 0;
+        }
 
-			Queue<QueueNode> queue = new LinkedList<QueueNode>();
-			queue.offer(new QueueNode(root, 1));
-			while (!queue.isEmpty()) {
-				QueueNode nodeDepth = queue.poll();
-				TreeNode node = nodeDepth.node;
-				int depth = nodeDepth.depth;
-				if (node.left == null && node.right == null) {
-					return depth;
-				}
-				if (node.left != null) {
-					queue.offer(new QueueNode(node.left, depth + 1));
-				}
-				if (node.right != null) {
-					queue.offer(new QueueNode(node.right, depth + 1));
-				}
-			}
+        class QueueNode {
+            TreeNode node;
+            int depth;
 
-			return 0;
-		}
-	}
+            public QueueNode(TreeNode node, int depth) {
+                this.node = node;
+                this.depth = depth;
+            }
+        }
+    }
 
 //	深度优先
 //	class Solution {

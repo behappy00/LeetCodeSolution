@@ -29,6 +29,7 @@ package leetcode.editor.cn;
 
 /**
  * Single Number
+ *
  * @author WBJ
  * @date 2022-07-24 21:19:25
  */
