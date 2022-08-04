@@ -333,6 +333,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/cn/P181_EmployeesEarningMoreThanTheirManagers.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/P181_EmployeesEarningMoreThanTheirManagers.md" />
+              <option name="frontendQuestionId" value="leetcode.cn181" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/cn/P181_EmployeesEarningMoreThanTheirManagers.java" />
+              <option name="titleSlug" value="employees-earning-more-than-their-managers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/leetcode/editor/cn/P18_FourSum.java">
           <value>
             <LeetcodeEditor>
